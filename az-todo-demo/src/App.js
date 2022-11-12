@@ -56,10 +56,10 @@ function App() {
 
         {todos.map(
           (item, idx) => <TodoItem 
-            item={item} onclick={e => toggleChecked(e, idx)}></TodoItem>
+            item={item} toggleFunc={e => toggleChecked(e, idx)}></TodoItem>
         )}
 
-        {todos.map(
+        {/* {todos.map(
           (item, idx) => {
             return (
               <li>
@@ -71,7 +71,7 @@ function App() {
                 {item.name}
               </li>
             );
-          })}
+          })} */}
       </ul>
     </div>
   );
