@@ -5,12 +5,12 @@ import { useState } from 'react'
 function App() {
 
   const [todos, setTodos] = useState([
-    "Learn",
-    "Read",
-    "Practice",
-    "Learn",
-    "Work out",
-    "Chill",
+    { name: "Learn", done: true},
+    { name: "Read", done: true},
+    { name: "Practice", done: true},
+    { name: "Learn", done: true},
+    { name: "Work out", done: true},
+    { name: "Chill", done: true},
   ]);
 
   const [item, setItem] = useState('');
@@ -19,14 +19,15 @@ function App() {
     if (!item) {
       return;
     }
-    const newTodos = todos.concat([item]);
+    const newTodos = todos.concat([{name: item, done: false}]);
     setTodos(newTodos);
     setItem('');
   }
 
   const itemChangedFunc = (e) => {
-    const item = e.target.value;
-    setItem(item);
+    const itemName = e.target.value;
+    // setItem({name: itemName, done: true});
+    setItem(itemName);
   }
 
   return (
@@ -37,7 +38,7 @@ function App() {
         <button onClick={addClickedFunc}>Add</button>
       </div>
       <ul>
-        {todos.map(item => <li>{item}</li>)}
+        {todos.map(item => <li>{item.name}</li>)}
       </ul>
     </div>
   );
