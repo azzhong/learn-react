@@ -22,23 +22,48 @@ function App() {
     const newTodos = todos.concat([{name: item, done: false}]);
     setTodos(newTodos);
     setItem('');
-  }
+  };
 
   const itemChangedFunc = (e) => {
     const itemName = e.target.value;
     // setItem({name: itemName, done: true});
     setItem(itemName);
+  };
+
+  const toggleChecked = (e, index) => {
+    const newTodos = todos.map((item, idx) => {
+      if (idx != index) {
+        return item;
+      } 
+      return {name: item.name, done: !item.done};
+    });
+    setTodos(newTodos);
   }
+
+  const notDone = todos.filter(item => !item.done).length;
 
   return (
     <div className='App'>
       <h1>AZ Todo List Demo</h1>
+      <div>Not done: {notDone}</div>
       <div>
         <input onChange={itemChangedFunc} type='text' value={item}></input>
         <button onClick={addClickedFunc}>Add</button>
       </div>
       <ul>
-        {todos.map(item => <li>{item.name}</li>)}
+        {todos.map(
+          (item, idx) => {
+            return (
+              <li>
+                <input 
+                  type='checkbox' 
+                  checked={item.done ? 'checked': ''}
+                  onClick={e => {toggleChecked(e, idx)}}>
+                </input>
+                {item.name}
+              </li>
+            );
+          })}
       </ul>
     </div>
   );
