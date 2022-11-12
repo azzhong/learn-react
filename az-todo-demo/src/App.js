@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react'
+import TodoItem from './TodoItem';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
   };
 
   const toggleChecked = (e, index) => {
+    console.log('check box {index} clciked');
     const newTodos = todos.map((item, idx) => {
       if (idx != index) {
         return item;
@@ -51,6 +53,12 @@ function App() {
         <button onClick={addClickedFunc}>Add</button>
       </div>
       <ul>
+
+        {todos.map(
+          (item, idx) => <TodoItem 
+            item={item} onclick={e => toggleChecked(e, idx)}></TodoItem>
+        )}
+
         {todos.map(
           (item, idx) => {
             return (
@@ -58,7 +66,7 @@ function App() {
                 <input 
                   type='checkbox' 
                   checked={item.done ? 'checked': ''}
-                  onClick={e => {toggleChecked(e, idx)}}>
+                  onClick={e => toggleChecked(e, idx)}>
                 </input>
                 {item.name}
               </li>
