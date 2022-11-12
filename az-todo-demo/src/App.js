@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react'
 import TodoItem from './TodoItem';
+import ItemList from './ItemList';
 
 function App() {
 
@@ -52,14 +53,21 @@ function App() {
         <input onChange={itemChangedFunc} type='text' value={item}></input>
         <button onClick={addClickedFunc}>Add</button>
       </div>
-      <ul>
 
+      <h2>Demo Using TodoList Component</h2>
+      <ItemList todos={todos} itemToggleFunc={toggleChecked}/>
+
+      <h2>Demo Item Component</h2>
+      <ul>
         {todos.map(
           (item, idx) => <TodoItem 
             item={item} toggleFunc={e => toggleChecked(e, idx)}></TodoItem>
         )}
+      </ul>
 
-        {/* {todos.map(
+      <h2>Demo Without Separate Components</h2>
+      <ul>
+        {todos.map(
           (item, idx) => {
             return (
               <li>
@@ -71,7 +79,7 @@ function App() {
                 {item.name}
               </li>
             );
-          })} */}
+          })}
       </ul>
     </div>
   );
