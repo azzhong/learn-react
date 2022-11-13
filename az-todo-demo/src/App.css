@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+/* customized */
+
+body {
+  /* font-family: 'Open Sans', sans-serif */
+}
+
+.new_item_1 {
+  border-style: dotted;
+  border-color: purple;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* width: 70%; */
+  width: 250px;
+  /* center the element */
+  /* https://www.w3schools.com/css/css_margin.asp */
+  margin: auto;
+}

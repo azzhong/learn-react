@@ -65,7 +65,7 @@ function App() {
       <div>Not done: {notDone}</div>
 
       <h2>New Item without Component</h2>
-      <div>
+      <div class='new_item_1'>
         <input onChange={itemChangedFunc} type='text' value={item}></input>
         <button onClick={addClickedFunc}>Add</button>
       </div>
