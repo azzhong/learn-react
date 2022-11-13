@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './NewItem.css';
 
 // addItemFunc is a function passed in from the main App
 // to the component
@@ -22,7 +23,7 @@ const NewItem = ({addItemFunc}) => {
     }
 
     return (
-        <div>
+        <div class='new_item_component'>
             <input 
                 type='text'
                 onChange={itemChangedFunc} 

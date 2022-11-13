@@ -1,0 +1,9 @@
+
+.new_item_component {
+  border-style: solid;
+  border-color: green;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 250px;
+  margin: auto;
+}
