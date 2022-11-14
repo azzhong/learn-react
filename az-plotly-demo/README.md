@@ -87,3 +87,6 @@ Then install them
 ```
 npm install
 ```
+
+Finally
+`npm start`
