@@ -65,7 +65,7 @@ function App() {
       <div>Not done: {notDone}</div>
 
       <h2>New Item without Component</h2>
-      <div class='new_item_1'>
+      <div class='no_component'>
         <input onChange={itemChangedFunc} type='text' value={item}></input>
         <button onClick={addClickedFunc}>Add</button>
       </div>
@@ -85,21 +85,23 @@ function App() {
       </ul>
 
       <h2>Demo Without Separate Components</h2>
-      <ul>
-        {todos.map(
-          (item, idx) => {
-            return (
-              <li>
-                <input 
-                  type='checkbox' 
-                  checked={item.done ? 'checked': ''}
-                  onClick={e => toggleChecked(e, idx)}>
-                </input>
-                {item.name}
-              </li>
-            );
-          })}
-      </ul>
+      <div class='no_component'>
+        <ul>
+          {todos.map(
+            (item, idx) => {
+              return (
+                <li>
+                  <input 
+                    type='checkbox' 
+                    checked={item.done ? 'checked': ''}
+                    onClick={e => toggleChecked(e, idx)}>
+                  </input>
+                  {item.name}
+                </li>
+              );
+            })}
+        </ul>
+      </div>
     </div>
   );
 }

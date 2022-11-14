@@ -43,7 +43,7 @@ body {
   /* font-family: 'Open Sans', sans-serif */
 }
 
-.new_item_1 {
+.no_component {
   border-style: dotted;
   border-color: purple;
   padding-top: 20px;
@@ -52,5 +52,32 @@ body {
   width: 250px;
   /* center the element */
   /* https://www.w3schools.com/css/css_margin.asp */
+  margin: auto;
+}
+
+.new_item_component {
+  border-style: solid;
+  border-color: green;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 250px;
+  margin: auto;
+}
+
+.each_item_component {
+  border-style: solid;
+  border-color: blue;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 70%;
+  margin: auto;
+}
+
+.item_list_component {
+  border-style: solid;
+  border-color: orange;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 250px;
   margin: auto;
 }
